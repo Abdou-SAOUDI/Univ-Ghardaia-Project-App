@@ -1,3 +1,20 @@
 <resources>
 	<string name="app_name">Univ-Ghardaia-Project-App</string>
+
+	<!-- Firebase Database References -->
+	<string name="reference_student">Students</string>
+	<string name="reference_teacher">Teachers</string>
+	<string name="reference_admin">Admins</string>
+
+	<!-- Buttons -->
+	<string name="login_btn_text">تسجيل الدخول</string>
+
+	<!-- Login Input Texts -->
+	<string name="login_note">في حالة نسيان كلمة المرور يرجى التقرب من إدارة القسم لإعادة تعيينها.</string>
+	<string name="id_card_hint">رقم بطاقة الطالب</string>
+	<string name="id_card_error">يرجى التأكد من رقم بطاقة الطالب</string>
+	<string name="id_card_helper">رقم بطاقة الطالب هو وسيلتك الوحيدة للوصول إلى حسابك.</string>
+	<string name="password_hint">كلمة المرور</string>
+	<string name="password_error">يجب أن تكون كلمة السر أطول من 8 خانات</string>
+	<string name="password_helper">كلمة المرور الإبتدائية هي رقم بطاقة الطالب، يجب تغييرها بعد أول استعمال.</string>
 </resources>
