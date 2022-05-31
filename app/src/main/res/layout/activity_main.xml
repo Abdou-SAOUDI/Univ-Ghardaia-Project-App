@@ -41,7 +41,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginVertical="8dp"
 		android:hint="@string/login_password_hint"
-		app:endIconMode="clear_text"
+		app:endIconMode="password_toggle"
 		app:errorEnabled="true"
 		app:errorIconDrawable="@drawable/ic_error"
 		app:helperText="@string/login_password_helper"
@@ -58,7 +58,7 @@
 		android:text="@string/login_btn_text"
 		android:textStyle="bold"
 		app:icon="@drawable/ic_login"
-		app:iconGravity="textStart"
+		app:iconGravity="textEnd"
 		app:iconPadding="8dp" />
 
 	<TextView android:layout_width="match_parent"
