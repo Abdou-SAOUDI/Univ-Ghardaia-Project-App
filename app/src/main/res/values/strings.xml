@@ -6,8 +6,26 @@
 	<string name="reference_teacher">Teachers</string>
 	<string name="reference_admin">Admins</string>
 
+	<!-- Intro Screen Strings -->
+	<string name="splash_fragment_page_1_text">هذا التطبيق مخصص لطرح الانشغالات على إدارة قسم
+		رياضيات واعلام الي بجامعة غرداية.
+	</string>
+	<string name="splash_fragment_page_2_text">كل طالب مسؤول عما بحدث داخل حسابه، ويمنع طرح
+		الانشغالات بأسامي طلبة آخرين.
+	</string>
+	<string name="splash_fragment_page_3_text">في حالة الاتهامات الباطلة، الإدعاءات الكاذبة، الطعون
+		خارج الآجال، أو استعمال ألفاظ غير لائقة، تطبق على الطالب القوانين التأديبية المعمول بها.
+	</string>
+	<string name="splash_fragment_page_4_text">يمكن التقرب من إدارة القسم في حالة عدم الرد على
+		الانشغال لأكثر من 5 أيام.
+	</string>
+
 	<!-- Buttons -->
 	<string name="login_btn_text">تسجيل الدخول</string>
+	<string name="continue_btn_text">متابعة</string>
+	<string name="next_btn_text">التالي</string>
+	<string name="skip_btn_text">تخطي</string>
+
 
 	<!-- Login Input Texts -->
 	<string name="login_note">في حالة نسيان كلمة المرور يرجى التقرب من إدارة القسم لإعادة تعيينها.</string>
@@ -17,4 +35,5 @@
 	<string name="login_password_hint">كلمة المرور</string>
 	<string name="login_password_error">يجب أن تكون كلمة السر أطول من 8 خانات</string>
 	<string name="login_password_helper">كلمة المرور الإبتدائية هي رقم بطاقة الطالب، يجب تغييرها بعد أول استعمال.</string>
+	<string name="content_description">text here</string>
 </resources>

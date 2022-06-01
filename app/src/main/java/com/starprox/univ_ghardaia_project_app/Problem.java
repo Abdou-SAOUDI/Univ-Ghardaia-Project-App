@@ -5,7 +5,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Problem {
 	// Attributes :
 	private String mID, mStudentID, mTitle, mText, mSendDate;
-	private FirebaseDatabase database;
+	private final FirebaseDatabase database;
 
 	// Constructors :
 

@@ -13,12 +13,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 	private final FirebaseDatabase database = FirebaseDatabase.getInstance ();
 	private final FirebaseAuth auth = FirebaseAuth.getInstance ();
+	private final ArrayList<Student> studentArrayList = new ArrayList<> ();
+	private final ArrayList<Teacher> teacherArrayList = new ArrayList<> ();
+	private final ArrayList<Departement> departementArrayList = new ArrayList<> ();
 	private DatabaseReference reference_student, reference_teacher, reference_admin;
 	private TextInputLayout login_cardNumber_TextInputLayout, login_password_TextInputLayout;
 
@@ -37,16 +41,66 @@ public class MainActivity extends AppCompatActivity {
 
 		login_MaterialButton.setOnClickListener (view -> {
 			if (verifyLoginFrontend (login_cardNumber_TextInputLayout, login_password_TextInputLayout)) {
-				boolean[] x = verifyLoginBackend (login_cardNumber_TextInputLayout.getEditText ().toString (), login_password_TextInputLayout.getEditText ().toString ());
-				if (x[0] && x[1])
-					Toast.makeText (MainActivity.this, "USERR: setOnClickListener: SUCCESS", Toast.LENGTH_SHORT).show ();
-				else if (! x[0])
-					Toast.makeText (MainActivity.this, "USERR: setOnClickListener: ID Incorrect", Toast.LENGTH_SHORT).show ();
-				else if (! x[1])
-					Toast.makeText (MainActivity.this, "USERR: setOnClickListener: Password Incorrect", Toast.LENGTH_SHORT).show ();
-
+//				TODO: User user = new User ("", )
+//				boolean[] x = verifyLoginBackend (login_cardNumber_TextInputLayout.getEditText ().toString (), login_password_TextInputLayout.getEditText ().toString ());
+//				if (x[0] && x[1])
+//					Toast.makeText (MainActivity.this, "USERR: setOnClickListener: SUCCESS", Toast.LENGTH_SHORT).show ();
+//				else if (! x[0])
+//					Toast.makeText (MainActivity.this, "USERR: setOnClickListener: ID Incorrect", Toast.LENGTH_SHORT).show ();
+//				else if (! x[1])
+//					Toast.makeText (MainActivity.this, "USERR: setOnClickListener: Password Incorrect", Toast.LENGTH_SHORT).show ();
 			} else
 				Toast.makeText (MainActivity.this, "verifyLoginFrontend : Failed", Toast.LENGTH_SHORT).show ();
+		});
+	}
+
+	@Override
+	protected void onStart () {
+		super.onStart ();
+
+		reference_student.addValueEventListener (new ValueEventListener () {
+			@Override
+			public void onDataChange (@NonNull DataSnapshot snapshot) {
+				studentArrayList.clear ();
+				for (DataSnapshot shot : snapshot.getChildren ())
+					if (shot.exists ())
+						studentArrayList.add (snapshot.getValue (Student.class));
+			}
+
+			@Override
+			public void onCancelled (@NonNull DatabaseError error) {
+
+			}
+		});
+
+		reference_teacher.addValueEventListener (new ValueEventListener () {
+			@Override
+			public void onDataChange (@NonNull DataSnapshot snapshot) {
+				teacherArrayList.clear ();
+				for (DataSnapshot shot : snapshot.getChildren ())
+					if (shot.exists ())
+						teacherArrayList.add (snapshot.getValue (Teacher.class));
+			}
+
+			@Override
+			public void onCancelled (@NonNull DatabaseError error) {
+
+			}
+		});
+
+		reference_admin.addValueEventListener (new ValueEventListener () {
+			@Override
+			public void onDataChange (@NonNull DataSnapshot snapshot) {
+				departementArrayList.clear ();
+				for (DataSnapshot shot : snapshot.getChildren ())
+					if (shot.exists ())
+						departementArrayList.add (snapshot.getValue (Departement.class));
+			}
+
+			@Override
+			public void onCancelled (@NonNull DatabaseError error) {
+
+			}
 		});
 	}
 
@@ -68,32 +122,30 @@ public class MainActivity extends AppCompatActivity {
 		return true;
 	}
 
-	// !return  0: Login Success.
-	// !return -1: Card ID doesn't exist in database.
-	// !return -2: password incorrect.
-	private boolean[] verifyLoginBackend (String _id, String _password) {
-		boolean[] id_password = new boolean[2];
-		Query query = reference_student.orderByChild ("cardID").equalTo (_id);
+	private boolean verifyLoginBackend (User _user, String _id, String _password) {
 
-		query.addValueEventListener (new ValueEventListener () {
-			@Override
-			public void onDataChange (@NonNull DataSnapshot snapshot) {
-				for (DataSnapshot shot : snapshot.getChildren ()) {
-					Student student = snapshot.getValue (Student.class);
-					if (student.getCardID ().equals (_id)) {
-						id_password[0] = true;
-						return;
-					} else id_password[0] = false;
-				}
-			}
+return false;
+		/*boolean[] id_password = {false, false};
 
-			@Override
-			public void onCancelled (@NonNull DatabaseError error) {
+		for (Student student : studentArrayList)
+			if (student.getCardID ().equals (_id)) {
+				id_password[0] = true;
+				return id_password;
 
 			}
-		});
 
+		for (Teacher teacher : teacherArrayList)
+			if (teacher.getID ().equals (_id)) {
+				id_password[0] = true;
+				return id_password;
+			}
 
-		return id_password;
+		for (Departement departement : departementArrayList)
+			if (departement.getID ().equals (_id)) {
+				id_password[0] = true;
+				return id_password;
+			}
+
+		return id_password;*/
 	}
 }

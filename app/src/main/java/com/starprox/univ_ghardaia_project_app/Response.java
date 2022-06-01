@@ -5,7 +5,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Response {
 	// Attributes :
 	private String mID, mProblemID, mTitle, mText, mAnswerDate;
-	private FirebaseDatabase database;
+	private final FirebaseDatabase database;
 
 	// Constructors :
 

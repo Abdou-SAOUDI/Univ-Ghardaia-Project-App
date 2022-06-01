@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Downloads/GitHub/Univ-Ghardaia-Project-App/app/src/main/res/drawable/ic_lock.xml" value="0.1235" />
+        <entry key="..\:/Downloads/GitHub/Univ-Ghardaia-Project-App/app/src/main/res/layout/activity_intro_screen.xml" value="0.2265625" />
         <entry key="..\:/Downloads/GitHub/Univ-Ghardaia-Project-App/app/src/main/res/layout/activity_main.xml" value="0.2265625" />
+        <entry key="..\:/Downloads/GitHub/Univ-Ghardaia-Project-App/app/src/main/res/layout/fragment_splash_page1.xml" value="0.2265625" />
+        <entry key="..\:/Downloads/GitHub/Univ-Ghardaia-Project-App/app/src/main/res/layout/fragment_splash_page2.xml" value="0.2265625" />
+        <entry key="..\:/Downloads/GitHub/Univ-Ghardaia-Project-App/app/src/main/res/mipmap-mdpi/ic_logo.xml" value="0.1235" />
       </map>
     </option>
   </component>
